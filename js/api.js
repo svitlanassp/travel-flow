@@ -51,4 +51,12 @@ const api = {
         body: data,
         isFormData: true,
     }),
+    updateTrip: (id,data) => request(`/trips/${id}/`, {
+        method: 'PUT',
+        body: data,
+        isFormData: true,
+    }),
+    deleteTrip: (id) => request(`/trips/${id}/`, {
+        method: 'DELETE',
+    }),
 };
