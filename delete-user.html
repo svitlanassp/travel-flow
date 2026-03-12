@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelFlow - Delete Confirmation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <a href="index.html" class="logo-group">
+                <div class="logo-placeholder">
+                    <img src="icons/logo.svg" alt="TravelFlow Logo">
+                </div>
+                <span class="brand-name">TravelFlow</span>
+            </a>
+            
+            <div class="user-profile-group">
+                
+                <a href="login.html" class="logout-btn" title="Logout">
+                    <img src="icons/logout.svg" alt="Logout">
+                </a>
+
+                <a href="users.html" class="profile-placeholder" title="User Management">
+                    <img src="icons/user.svg" alt="User Profile">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="content-wrapper page-center-wrapper">
+        <div class="users-card">
+            
+            <div class="users-header">
+                <h2>Users</h2>
+                <button class="btn-add">Add User</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th style="text-align: right;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="view-user.html">ivan_traveler</a></td>
+                            <td>Admin</td>
+                            <td class="text-right">
+                                <div class="actions-group align-right">
+                                    <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                    <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><a href="view-user.html">olena_traveler</a></td>
+                            <td>Regular</td>
+                            <td class="text-right">
+                                <div class="actions-group align-right">
+                                    <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                    <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="modal-overlay">
+            <div class="confirm-card">
+                <h2>Delete Confirmation</h2>
+                <p>
+                    Are you sure you want to delete this user?
+                    <strong>This action can't be undone</strong>
+                </p>
+                <div class="confirm-actions">
+                    <a href="users.html" class="btn-secondary">Cancel</a>
+                    <a href="users.html" class="btn-ok">Delete</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

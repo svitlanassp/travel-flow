@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelFlow - Create User</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <a href="index.html" class="logo-group">
+                <div class="logo-placeholder">
+                    <img src="icons/logo.svg" alt="TravelFlow Logo">
+                </div>
+                <span class="brand-name">TravelFlow</span>
+            </a>
+            
+            <div class="user-profile-group">
+                
+                <a href="login.html" class="logout-btn" title="Logout">
+                    <img src="icons/logout.svg" alt="Logout">
+                </a>
+
+                <a href="users.html" class="profile-placeholder" title="User Management">
+                    <img src="icons/user.svg" alt="User Profile">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="content-wrapper page-center-wrapper">
+        <div class="users-card">
+            
+            <div class="users-header">
+                <h2>Create user</h2>
+            </div>
+
+            <form class="form-content">
+                <div class="fields-group">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm password</label>
+                        <input type="password" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select name="role">
+                            <option value="regular">Regular</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <a href="users.html" class="btn-secondary">Cancel</a>
+                    <a href="users.html" class="btn-ok">Save</a>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+</body>
+</html>

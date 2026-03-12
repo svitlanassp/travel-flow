@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelFlow - Budget</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            
+            <a href="index.html" class="logo-group">
+                <div class="logo-placeholder">
+                    <img src="icons/logo.svg" alt="TravelFlow Logo">
+                </div>
+                <span class="brand-name">TravelFlow</span>
+            </a>
+            
+            <div class="user-profile-group">
+                
+                <a href="login.html" class="logout-btn" title="Logout">
+                    <img src="icons/logout.svg" alt="Logout">
+                </a>
+
+                <a href="users.html" class="profile-placeholder" title="User Management">
+                    <img src="icons/user.svg" alt="User Profile">
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="section-header">
+            <div class="tabs-group">
+                <button class="tab-btn">Schedule</button>
+                <span class="divider"></span>
+                <button class="tab-btn active">Budget</button>
+            </div>
+            <button class="btn-add">Add Expense</button>
+        </section>
+
+        <div class="budget-summary-card">
+            <div class="summary-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total budget</span>
+                    <span class="stat-value total">$500</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Spent</span>
+                    <span class="stat-value spent">$170</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Remaining</span>
+                    <span class="stat-value remaining">$330</span>
+                </div>
+            </div>
+            <div class="budget-progress-large">
+                <div class="progress-fill" style="width: 30%;"></div>
+            </div>
+        </div>
+
+        <div class="expenses-container">
+            <table class="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Expense</th>
+                        <th>Date</th>
+                        <th>Cost</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Museum of Art</td>
+                        <td>June 11, 2026</td>
+                        <td class="cost-value">$25</td>
+                        <td class="text-right">
+                            <div class="actions-group align-right">
+                                <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Lunch at Bistro</td>
+                        <td>June 11, 2026</td>
+                        <td class="cost-value">$45</td>
+                        <td class="text-right">
+                            <div class="actions-group align-right">
+                                <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bus Ticket</td>
+                        <td>June 12, 2026</td>
+                        <td class="cost-value">$5</td>
+                        <td class="text-right">
+                            <div class="actions-group align-right">
+                                <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Souvenirs</td>
+                        <td>June 12, 2026</td>
+                        <td class="cost-value">$25</td>
+                        <td class="text-right">
+                            <div class="actions-group align-right">
+                                <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dinner</td>
+                        <td>June 12, 2026</td>
+                        <td class="cost-value">$60</td>
+                        <td class="text-right">
+                            <div class="actions-group align-right">
+                                <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                            </div>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>Coffee</td>
+                        <td>June 13, 2026</td>
+                        <td class="cost-value">$10</td>
+                        <td class="text-right">
+                            <div class="actions-group align-right">
+                                <button class="action-btn"><img src="icons/edit.svg" alt="Edit"></button>
+                                <button class="action-btn"><img src="icons/delete.svg" alt="Delete"></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="form-modal-card">
+            <h2>Edit Expense</h2>
+            
+            <form class="form-content">
+                <div class="fields-group">
+                    
+                    <div class="form-group">
+                        <label>Expense Name</label>
+                        <input type="text" value="Souvenirs" placeholder="e.g. Flight tickets or Dinner">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Date (Optional)</label>
+                            <input type="date" value="2026-06-12">
+                        </div>
+                        <div class="form-group">
+                            <label>Cost</label>
+                            <input type="number" value="25" placeholder="0.00" min="0" step="0.01" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-footer">
+                    <a href="trip-budget.html" class="btn-secondary">Cancel</a>
+                    <a href="trip-budget.html" class="btn-ok">Save</a>
+                </div>
+            </form>
+        </div>
+    </div>    
+    
+</body>
+</html>

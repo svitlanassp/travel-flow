@@ -1,0 +1,100 @@
+@media (max-width: 768px) {
+ 
+    .calendar-scroll-container {
+        height: calc(100vh - 250px); 
+        max-height: none;
+    }
+
+   .page-center-wrapper {
+        align-items: center; 
+        > * { margin-bottom: 20vh; }
+    }
+    
+    .main-header {
+        padding: 10px 15px;
+        
+        .brand-name {
+            font-size: 24px;
+        }
+    }
+
+    .content-wrapper {
+        padding: 15px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        .controls-group {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+
+    .auth-card, 
+    .users-card, 
+    .form-modal-card, 
+    .confirm-card, 
+    .budget-summary-card {
+        padding: 20px;
+    }
+
+    .form-modal-card {
+        .form-row {
+            flex-direction: row; 
+            gap: 10px; 
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .trips-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
+
+    .trip-card {
+        width: 100%; 
+        
+        .trip-image-placeholder {
+            height: 140px; 
+        }
+    }
+
+    .budget-summary-card {
+        .summary-stats {
+            flex-wrap: wrap; 
+            gap: 15px;
+            
+            .stat-item {
+                flex: 1 1 45%; 
+            }
+        }
+    }
+
+    .table-container, 
+    .expenses-container {
+        overflow-x: auto;
+        padding-right: 0;
+
+        table {
+            min-width: 500px; 
+        }
+    }
+
+    
+}
+
+@media (max-width: 480px) {
+    .budget-summary-card .summary-stats .stat-item {
+        flex: 1 1 100%; 
+    }
+    
+    .section-header .tabs-group .tab-btn {
+        font-size: 20px; 
+    }
+}

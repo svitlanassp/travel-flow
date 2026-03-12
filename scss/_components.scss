@@ -1,0 +1,276 @@
+// BUTTONS 
+.btn-add {
+    @include btn-primary;
+    padding: 12px 28px;
+}
+
+.btn-add-event {
+    @include btn-primary;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    padding: 0;
+    display: inline-flex;   
+    align-items: center;     
+    justify-content: center; 
+}
+
+.btn-login {
+    @include btn-primary(100%, 12px, 0, 1.1rem);
+    margin-top: 10px;
+}
+
+.btn-secondary {
+    @include btn-primary(auto, 10px, 25px, 0.9rem);
+    background-color: $gray-placeholder;
+    color: $text-dark;
+
+    &:hover { background-color: darken($gray-placeholder, 10%); }
+}
+
+.btn-ok {
+    @include btn-primary(auto, 10px, 40px, 0.9rem);
+}
+
+.action-btn {
+    @include btn-icon;
+        
+    img {
+        width: 18px; 
+        height: 18px;
+        display: block;
+   }
+}
+
+// FORMS & INPUTS
+.form-group {
+    margin-bottom: 20px;
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: $text-light-gray;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
+    input {
+        @include input-style;
+        &.is-invalid {
+            border: 1px solid $status-spent;
+            background-color: $light-red;
+            
+            &:focus {
+                box-shadow: 0 0 0 2px rgba($status-spent, 0.2);
+            }
+        }
+    }
+
+    .error-text {
+        display: block;
+        color: $status-spent;
+        font-size: 0.8rem;
+        margin-top: 6px;
+    }
+}
+
+select {
+    @include input-style;
+    cursor: pointer;
+    appearance: none;
+    background-image: $icon_chevron_down;
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.filter-select {
+    @include input-style;
+    padding: 8px 30px 8px 12px;
+    width: auto;
+    min-width: 130px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border: 2px solid $primary-purple; 
+    background-color: $white;
+
+    option {
+        background: $white;
+        color: $text-dark;
+        padding: 10px;
+        &.opt-sightseeing { color: $tag-blue; }
+        &.opt-food { color: $tag-red; }
+        &.opt-party { color: $tag-purple; }
+    }
+}
+
+.auth-link {
+    display: block;
+    margin-top: 16px;
+    color: $primary-purple;
+    text-decoration: none;
+    font-size: 0.9rem;
+    &:hover { text-decoration: underline; }
+}
+
+// TABLES
+.table-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    @include custom-scrollbar;
+    padding-right: 5px;
+
+    table {
+        @include table-base;
+    }
+}
+
+// MISC COMPONENTS
+.category-tag {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: lowercase;
+    
+    &.sightseeing { background: $light-blue; color: $tag-blue; }
+    &.food { background: $light-red; color: $tag-red; }
+    &.party { background: $light-purple; color: $tag-purple; }
+}
+
+.budget-progress-container {
+    .progress-bar {
+        @include progress-bar-base(8px); 
+        margin-bottom: 5px;
+    }
+}
+
+.actions-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 2; 
+
+    &.align-right {
+        justify-content: flex-end;
+    }
+}
+
+.alert-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: $light-red;
+    border: 1px solid $red-border;
+    color: $status-spent; 
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+//MODALS
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.form-modal-card {
+    @include card-base;
+    width: 100%;
+    max-width: 450px; 
+    padding: 30px;
+    max-height: 90vh;
+    overflow-y: auto;
+    @include custom-scrollbar;
+    
+    h2 {
+        font-size: 1.8rem;
+        margin: 0 0 20px 0;
+        color: $text-dark;
+        font-weight: bold;
+    }
+
+    .form-row {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+    }
+
+    textarea {
+        @include input-style;
+        resize: vertical;
+        min-height: 80px;
+        font-family: inherit;
+    }
+
+    input[type="file"] {
+        padding: 10px;
+        background-color: $input-bg;
+        border: 1px dashed $border-subtle;
+        cursor: pointer;
+        color: $text-muted;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    .form-footer {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 25px;
+
+        .btn-ok {
+            padding: 10px 25px; 
+        }
+    }
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.confirm-card {
+    @include card-base;
+    width: 100%;
+    max-width: 340px; 
+    padding: 30px;
+    text-align: center;
+
+    h2 {
+        font-size: 1.5rem;
+        color: $text-dark;
+        margin-bottom: 15px;
+    }
+
+    p {
+        color: $text-muted;
+        font-size: 1rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+
+        strong {
+            display: block;
+            color: $status-spent; 
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+    }
+
+    .confirm-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+}
