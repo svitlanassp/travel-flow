@@ -16,3 +16,13 @@ const Auth = {
         return !!this.getToken();
     },
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutBtn = document.querySelector('.logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            Auth.logout();
+        });
+    }
+});

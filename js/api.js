@@ -59,4 +59,8 @@ const api = {
     deleteTrip: (id) => request(`/trips/${id}/`, {
         method: 'DELETE',
     }),
+    register: (data) => request('/register/', {
+        method: 'POST',
+        body: JSON.stringify(data),
+    }),
 };
