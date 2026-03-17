@@ -92,38 +92,6 @@ async function handleAddTrip(e) {
     await loadTrips();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (!Auth.isLoggedIn()) {
-        window.location.href = 'login.html';
-        return;
-    }
-
-    document.getElementById('btn-open-modal').addEventListener('click', openModal);
-    document.getElementById('btn-close-modal').addEventListener('click', closeModal);
-    document.getElementById('add-trip-form').addEventListener('submit', handleAddTrip);
-
-    document.getElementById('btn-close-edit-modal').addEventListener('click', closeEditModal);
-    document.getElementById('edit-trip-form').addEventListener('submit', handleEditTrip);
-
-    document.getElementById('btn-close-delete-modal').addEventListener('click', closeDeleteModal);
-    document.getElementById('btn-confirm-delete').addEventListener('click', handleDeleteTrip);
-
-    document.getElementById('trips-grid').addEventListener('click', (e) => {
-        const editBtn = e.target.closest('.btn-edit-trip');
-        const deleteBtn = e.target.closest('.btn-delete-trip');
-        if (editBtn) {
-            e.preventDefault();
-            openEditModal(editBtn);
-        }
-        if (deleteBtn) {
-            e.preventDefault();
-            openDeleteModal(deleteBtn);
-        }
-    });
-
-    loadTrips();
-});
-
 let currentEditId = null;
 let currentDeleteId = null;
 
@@ -164,7 +132,7 @@ async function handleEditTrip(e) {
     formData.append('end_date', document.getElementById('edit-trip-end').value);
     formData.append('total_budget', parseFloat(document.getElementById('edit-trip-budget').value) || 0);
     const photoFile = document.getElementById('edit-trip-photo').files[0];
-    if(photoFile) {
+    if (photoFile) {
         formData.append('cover_image', photoFile);
     }
     await api.updateTrip(currentEditId, formData);
@@ -177,3 +145,35 @@ async function handleDeleteTrip() {
     closeDeleteModal();
     await loadTrips();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (!Auth.isLoggedIn()) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    document.getElementById('btn-open-modal').addEventListener('click', openModal);
+    document.getElementById('btn-close-modal').addEventListener('click', closeModal);
+    document.getElementById('add-trip-form').addEventListener('submit', handleAddTrip);
+
+    document.getElementById('btn-close-edit-modal').addEventListener('click', closeEditModal);
+    document.getElementById('edit-trip-form').addEventListener('submit', handleEditTrip);
+
+    document.getElementById('btn-close-delete-modal').addEventListener('click', closeDeleteModal);
+    document.getElementById('btn-confirm-delete').addEventListener('click', handleDeleteTrip);
+
+    document.getElementById('trips-grid').addEventListener('click', (e) => {
+        const editBtn = e.target.closest('.btn-edit-trip');
+        const deleteBtn = e.target.closest('.btn-delete-trip');
+        if (editBtn) {
+            e.preventDefault();
+            openEditModal(editBtn);
+        }
+        if (deleteBtn) {
+            e.preventDefault();
+            openDeleteModal(deleteBtn);
+        }
+    });
+
+    loadTrips();
+});

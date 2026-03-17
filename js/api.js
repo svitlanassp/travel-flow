@@ -12,32 +12,28 @@ async function request(endpoint, options = {}) {
         headers.Authorization = `Bearer ${token}`;
     }
 
-    const { isFormData, ...fetchOptions } = options;
+    const { isFormData: _isFormData, ...fetchOptions } = options;
 
     const config = {
         ...fetchOptions,
         headers: { ...headers, ...fetchOptions.headers },
     };
 
-    try {
-        const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
-        
-        if (response.status === 401) {
-            Auth.logout();
-            return null;
-        }
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
 
-        if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(JSON.stringify(errorData));
-        }
-
-        if (response.status === 204) return true;
-
-        return await response.json();
-    } catch (error) {
-        throw error;
+    if (response.status === 401) {
+        Auth.logout();
+        return null;
     }
+
+    if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(JSON.stringify(errorData));
+    }
+
+    if (response.status === 204) return true;
+
+    return response.json();
 }
 
 const api = {
@@ -51,7 +47,7 @@ const api = {
         body: data,
         isFormData: true,
     }),
-    updateTrip: (id,data) => request(`/trips/${id}/`, {
+    updateTrip: (id, data) => request(`/trips/${id}/`, {
         method: 'PUT',
         body: data,
         isFormData: true,

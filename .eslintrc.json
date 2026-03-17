@@ -8,14 +8,17 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "Auth": "readonly",
+        "api": "writable"
     },
     "parserOptions": {
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "script"
     },
     "rules": {
         "indent": ["error", 4],
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "no-unused-vars": ["error", { "varsIgnorePattern": "^(api|_.*)" }]
     }
 }
