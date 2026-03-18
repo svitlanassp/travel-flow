@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('reg-password').value;
             const passwordConfirm = document.getElementById('reg-password-confirm').value;
 
+            if (password !== passwordConfirm) {
+                const errorDiv = document.getElementById('register-error');
+                const errorText = document.getElementById('register-error-text');
+                errorText.textContent = 'Passwords do not match.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
             try {
                 await api.register({ username, password, password_confirm: passwordConfirm });
                 window.location.href = 'login.html';
